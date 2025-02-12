@@ -28,9 +28,9 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
+  - Layer 1
+  - Layer 2
+  - Layer 3
   - 
   - 
   - 
@@ -52,4 +52,13 @@ TagManager:
     locked: 0
   - name: Characters
     uniqueID: 477139927
+    locked: 0
+  - name: Layer 1
+    uniqueID: 4080497327
+    locked: 0
+  - name: Layer 2
+    uniqueID: 3386168889
+    locked: 0
+  - name: Layer 3
+    uniqueID: 2979047993
     locked: 0
