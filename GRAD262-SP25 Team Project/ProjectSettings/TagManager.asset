@@ -4,9 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - VirtualCamera
   - Enemy
   - CanBePickedUp
-  - VirtualCamera
   layers:
   - Default
   - TransparentFX
@@ -44,21 +44,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Ground
-    uniqueID: 2728406263
-    locked: 0
-  - name: Objects
-    uniqueID: 1796841907
-    locked: 0
-  - name: Characters
-    uniqueID: 477139927
-    locked: 0
   - name: Layer 1
-    uniqueID: 4080497327
+    uniqueID: 2425651459
     locked: 0
   - name: Layer 2
-    uniqueID: 3386168889
+    uniqueID: 4250941897
     locked: 0
   - name: Layer 3
-    uniqueID: 2979047993
+    uniqueID: 4189426099
+    locked: 0
+  - name: Ground
+    uniqueID: 2004851399
+    locked: 0
+  - name: Objects
+    uniqueID: 3389159667
+    locked: 0
+  - name: Characters
+    uniqueID: 3916228199
     locked: 0
