@@ -18,6 +18,6 @@ public class Actionable : MonoBehaviour
 
     public virtual void DoAction()
     {
-
+        Debug.Log("Entered DoAction");
     }
 }
