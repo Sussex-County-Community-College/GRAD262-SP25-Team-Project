@@ -10,5 +10,6 @@ public class DoorActionable : Actionable
     public override void DoAction()
     {
         player.transform.position = destination.transform.position;
+        AudioManager.instance.PlayDoorOpening();
     }
 }
