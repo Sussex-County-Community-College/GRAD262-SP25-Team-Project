@@ -4,15 +4,36 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public AudioManager instance;
+    public AudioClip background;
+    public AudioClip doorOpening;
+
+    private void Awake()
     {
-        
+        instance = this;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        ResumeBackground();
     }
+
+    public void PlayDoorOpening()
+    {
+        AudioSource audio = GetComponent<AudioSource>();
+        audio.Stop();
+        audio.clip = doorOpening;
+        audio.loop = false;
+        audio.Play();
+        Invoke("ResumeBackground", audio.clip.length + 0.5f);
+    }
+
+    public void ResumeBackground()
+    {
+        AudioSource audio = GetComponent<AudioSource>();
+        audio.clip = background;
+        audio.loop = true;
+        audio.Play();
+    }
+
 }
