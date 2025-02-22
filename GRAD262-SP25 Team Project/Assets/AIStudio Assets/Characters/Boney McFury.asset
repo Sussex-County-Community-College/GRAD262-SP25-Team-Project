@@ -12,8 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a3d483adeff0fd4fa9461bf84dc61d1, type: 3}
   m_Name: Boney McFury
   m_EditorClassIdentifier: 
-  character: Boney
-  voice: en-US-TonyNeural
+  character: McFury
+  voice: 
   avatar: 
   narrative: The character Boney McFury is an angry skeleton with an Irish accent
     and temper.
+  SSML: "<speak version='1.0' \r\n    xmlns='http://www.w3.org/2001/10/synthesis'
+    \r\n    xmlns:mstts='https://www.w3.org/2001/mstts'\r\n    xml:lang='en-US'>\r\n   
+    <voice name='en-IE-ConnorNeural'>\r\n        <mstts:express-as style='angry'
+    styledegree='100'>\r\n            <prosody rate='+1%' pitch='+30%'>^text^</prosody>\r\n       
+    </mstts:express-as>\r\n    </voice>\r\n</speak>"

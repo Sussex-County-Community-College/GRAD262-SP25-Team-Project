@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16dc6b781269c1743ba6256c9da90132, type: 3}
+  m_Name: SpiritbladeFirstMeetsBoneyMcFury
+  m_EditorClassIdentifier: 
+  dialogueContext: "I want you to pretend to be the fictional character Boney McFury.
+    \r\nI will pretend to be the the fictional character Spiritblade. \r\nThe context
+    of this fictional conversation is Spiritblade and Boney McFury \nare meeting
+    for the first time. Boney is irritated at Spiritblade but is willing to \nhelp
+    him in his quest to find the door that can teleport Spiritblade to the magic\npodium
+    if the player is next to the door and types in Enter. \r\nUse the character name
+    followed by a colon as the prompt separator.\r\nYou should only respond as a
+    single character with each prompt. Therefore there should only be a single \"character
+    name:\" token in any response."
+  player: {fileID: 11400000, guid: a69d75b46d710554a8b93039be34c921, type: 2}
+  nonPlayerCharacters:
+  - {fileID: 11400000, guid: 1be0785de93ae5841ab15cdee7279bfa, type: 2}
+  initialPrompt: 'McFury: Spiritblade, I''ve heard alot about you, nothing good!'
+  closingPrompt: 
+  closingPromptDelay: 0
+  nextScene: 

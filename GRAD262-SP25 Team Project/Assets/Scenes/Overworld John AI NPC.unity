@@ -5256,6 +5256,9 @@ GameObject:
   - component: {fileID: 263616621}
   - component: {fileID: 263616623}
   - component: {fileID: 263616622}
+  - component: {fileID: 263616626}
+  - component: {fileID: 263616627}
+  - component: {fileID: 263616628}
   m_Layer: 20
   m_Name: Boney McFury
   m_TagString: Untagged
@@ -5289,7 +5292,7 @@ Animator:
   m_GameObject: {fileID: 263616620}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a37ddba84892c83489111d201d111a96, type: 2}
+  m_Controller: {fileID: 9100000, guid: eac4f99c612f6964b85e10953b89dd6f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -5352,6 +5355,131 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &263616626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263616620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f57161ce16ec2224782891f66f9c3c7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 11400000, guid: 1be0785de93ae5841ab15cdee7279bfa, type: 2}
+  transcript: {fileID: 0}
+  lookAtTarget: {fileID: 0}
+  usePlayerVoice: 1
+  removeActionsFromTranscript: 1
+--- !u!114 &263616627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263616620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 992876577f018994d923623cc777e898, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!82 &263616628
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263616620}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &270079504
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11250,8 +11378,8 @@ MonoBehaviour:
   _logLevel: 0
   _destroyOnLoad: 1
   _console: {fileID: 0}
-  _consoleLogLevel: 3
-  activeDialogue: {fileID: 11400000, guid: eef9ee721341e7741a3d968309ac68dd, type: 2}
+  _consoleLogLevel: 0
+  activeDialogue: {fileID: 11400000, guid: e3dd0ede14109ed40a4d981ab95fd2c1, type: 2}
   closingPromptInjected:
     m_PersistentCalls:
       m_Calls: []
@@ -11261,7 +11389,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   nameDelimiter: ':'
-  chatInitiatedByNPC: 0
+  chatInitiatedByNPC: 1
 --- !u!1001 &443236347
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30823,8 +30951,9 @@ GameObject:
   - component: {fileID: 1622224633}
   - component: {fileID: 1622224632}
   - component: {fileID: 1012006894227905748}
+  - component: {fileID: 1012006894227905749}
   m_Layer: 20
-  m_Name: PF Player
+  m_Name: Spiritblade
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36475,6 +36604,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1012006894227905749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622224629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f57161ce16ec2224782891f66f9c3c7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 11400000, guid: a69d75b46d710554a8b93039be34c921, type: 2}
+  transcript: {fileID: 0}
+  lookAtTarget: {fileID: 0}
+  usePlayerVoice: 0
+  removeActionsFromTranscript: 1
 --- !u!4 &1336196914018830829 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8228059593326255414, guid: 84d669757910f1f488023c92e71fcad5,
