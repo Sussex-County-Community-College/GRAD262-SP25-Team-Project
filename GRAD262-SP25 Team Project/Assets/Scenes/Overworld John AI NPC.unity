@@ -15252,14 +15252,13 @@ GameObject:
   - component: {fileID: 747494657}
   - component: {fileID: 747494656}
   - component: {fileID: 747494655}
-  - component: {fileID: 747494660}
   m_Layer: 0
   m_Name: Boney McFury Layer 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &747494654
 Transform:
   m_ObjectHideFlags: 0
@@ -15474,24 +15473,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &747494660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 747494653}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9086d25ca5fb2514daceb65e9dcfb328, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue: {fileID: 11400000, guid: e3dd0ede14109ed40a4d981ab95fd2c1, type: 2}
-  _triggered: 0
-  go1: {fileID: 1622224631}
-  go2: {fileID: 747494654}
-  triggerDistance: 3
-  triggerNear: 1
 --- !u!1001 &751513034
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31724,6 +31705,56 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1684916105}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1693379367
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1693379368}
+  - component: {fileID: 1693379369}
+  m_Layer: 0
+  m_Name: Boney Trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1693379368
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693379367}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.7, y: 8.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2129030011}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1693379369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693379367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eafb968b99b44a847ac7a8ba81a0daf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: {fileID: 11400000, guid: e3dd0ede14109ed40a4d981ab95fd2c1, type: 2}
+  _triggered: 0
+  go1: {fileID: 1622224631}
+  go2: {fileID: 747494654}
+  triggerDistance: 5
+  triggerNear: 1
 --- !u!4 &1696563834 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7947911505737750448, guid: 6d69371a87148ee4dac7b2b814437ffd,
@@ -35072,7 +35103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   apikey: 
   model: gpt-4o
-  async: 0
+  async: 1
   messages: []
 --- !u!114 &2028364512
 MonoBehaviour:
@@ -36001,6 +36032,7 @@ Transform:
   m_Children:
   - {fileID: 1622224631}
   - {fileID: 747494654}
+  - {fileID: 1693379368}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2135407828
