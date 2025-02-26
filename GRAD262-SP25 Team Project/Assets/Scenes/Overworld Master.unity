@@ -15696,6 +15696,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {fileID: 1822496613}
+  door: {fileID: 58571428}
+  openDoor: {fileID: 21300160, guid: 29c9cded5e558164aaf8c9bf08aa1510, type: 3}
   player: {fileID: 1622224629}
 --- !u!1001 &781189522
 PrefabInstance:
