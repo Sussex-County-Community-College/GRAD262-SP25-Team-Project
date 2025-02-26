@@ -36,4 +36,14 @@ public class AudioManager : MonoBehaviour
         audio.Play();
     }
 
+    public void PlaySoundEffect(AudioClip clip)
+    {
+        AudioSource audio = GetComponent<AudioSource>();
+        audio.Stop();
+        audio.clip = clip;
+        audio.loop = false;
+        audio.Play();
+        Invoke("ResumeBackground", audio.clip.length + 0.5f);
+    }
+
 }

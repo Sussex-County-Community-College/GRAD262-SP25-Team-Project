@@ -12507,6 +12507,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2055102312537850835}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &593483417 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7947911505737750455, guid: c5bdca1933fde624698bb8c6d6daa44b,
+    type: 3}
+  m_PrefabInstance: {fileID: 717919140}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &594511547
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14113,7 +14119,15 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7947911505737750455, guid: c5bdca1933fde624698bb8c6d6daa44b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 717919145}
+    - targetCorrespondingSourceObject: {fileID: 7947911505737750455, guid: c5bdca1933fde624698bb8c6d6daa44b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 717919150}
   m_SourcePrefab: {fileID: 100100000, guid: c5bdca1933fde624698bb8c6d6daa44b, type: 3}
 --- !u!4 &717919141 stripped
 Transform:
@@ -14121,6 +14135,33 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 717919140}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &717919145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593483417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc0f3323c5592d40badadc0539eb28a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scene: Dungeon Johann
+--- !u!114 &717919150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593483417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23f685a34ec8a7a4f9aed1844e208594, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggered: 0
+  clip: {fileID: 8300000, guid: 7190fe0dbd9d4ae4bb946eabb8f61946, type: 3}
 --- !u!1001 &723443629
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28997,7 +29038,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8f40ac2b8acd284491cf0545fe8638e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  instance: {fileID: 0}
   background: {fileID: 8300000, guid: 405db9417765d8e4e9e5580ecd49a5fa, type: 3}
   doorOpening: {fileID: 8300000, guid: 7190fe0dbd9d4ae4bb946eabb8f61946, type: 3}
 --- !u!1001 &1602627392
