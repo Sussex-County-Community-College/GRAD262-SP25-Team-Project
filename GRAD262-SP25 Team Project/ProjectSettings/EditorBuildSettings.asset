@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Overworld Johann.unity
+    guid: db26ab8bc95749b47a6e8e152b97798c
+  - enabled: 1
+    path: Assets/Scenes/Dungeon Johann.unity
+    guid: b53749a523d93a84a8a4a453af6f4590
   m_configObjects: {}
