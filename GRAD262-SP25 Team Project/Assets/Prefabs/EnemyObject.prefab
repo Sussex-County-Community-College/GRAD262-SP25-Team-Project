@@ -246,7 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fd806ef87f6e774bb565fa9fcce47c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pursuitSpeed: 1.4
-  wanderSpeed: 0.8
-  directionChangeInterval: 3
+  pursuitSpeed: 2
+  wanderSpeed: 1
+  directionChangeInterval: 1
   followPlayer: 0
