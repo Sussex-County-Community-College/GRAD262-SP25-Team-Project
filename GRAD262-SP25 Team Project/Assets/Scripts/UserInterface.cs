@@ -6,26 +6,15 @@ using UnityEngine.UI;
 public class UserInterface : MonoBehaviour
 {
     public GameObject PlayerUI;
-   
-    // Start is called before the first frame update
-    void Start()
-    {
-        PlayerUI.SetActive(false);
-    }
-
-    private void CallUI()
-    {
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            PlayerUI.SetActive(true);
-            Debug.Log("UI is active");
-        }
-    }
-
+    private bool uiActive;
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            PlayerUI.SetActive(!PlayerUI.activeSelf);
+            Debug.Log("UI is active");
+        }
     }
 }
