@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +10,11 @@ namespace Cainos.PixelArtTopDown_Basic
         public float speed;
 
         private Animator animator;
+
+        public void DamageCharacter(int damageStrength)
+        {
+            Debug.Log($"TopDownCharacterController.DamageCharacter damageStrength={damageStrength}");
+        }
 
         private void Start()
         {
