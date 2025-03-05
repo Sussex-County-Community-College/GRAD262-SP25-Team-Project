@@ -53,8 +53,9 @@ namespace SCCC
             // Because only enemies can only hurt the player
             if (collision.gameObject.CompareTag("Player"))
             {
-                TopDownCharacterController player = collision.gameObject.GetComponent<TopDownCharacterController>();
-                player.DamageCharacter(damageStrength);
+                Actionable actionable = collision.gameObject.GetComponent<Actionable>();
+                if (actionable)
+                    actionable.DoAction();
             }
         }
 
