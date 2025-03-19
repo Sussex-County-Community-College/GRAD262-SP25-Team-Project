@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace SCCC
 {
@@ -7,12 +8,14 @@ namespace SCCC
         public GameObject prefabToSpawn;
         public float repeatInterval;
 
-        public void Start()
+        public void Awake()
         {
             if (repeatInterval > 0)
             {
                 InvokeRepeating("SpawnObject", 0.0f, repeatInterval);
             }
+            else if(!GameManager.Instance.HasSceneBeenLoadedBefore())
+                SpawnObject();
         }
 
         public GameObject SpawnObject()

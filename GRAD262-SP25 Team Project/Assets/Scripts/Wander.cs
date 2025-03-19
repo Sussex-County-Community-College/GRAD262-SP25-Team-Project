@@ -29,6 +29,8 @@ namespace SCCC
         Vector3 endPosition;
         float currentAngle = 0;
 
+        public float moveDistance = 20;
+
         void Start()
         {
             animator = GetComponent<Animator>();
@@ -59,11 +61,13 @@ namespace SCCC
 
         void ChooseNewEndpoint()
         {
-            currentAngle += Random.Range(0, 360); // degrees
+            //currentAngle += Random.Range(0, 360); // degrees
+            currentAngle = Random.Range(0, 360);
 
             // if currentAngle is greater than 360, loop so it starts at 0 again, keeping the value between 0 and 360
-            currentAngle = Mathf.Repeat(currentAngle, 360);
-            endPosition += Vector3FromAngle(currentAngle);
+            //currentAngle = Mathf.Repeat(currentAngle, 360);
+            //endPosition += Vector3FromAngle(currentAngle);
+            endPosition = transform.position + Vector3FromAngle(currentAngle) * moveDistance;
         }
 
         Vector3 Vector3FromAngle(float inputAngleDegrees)
@@ -99,6 +103,22 @@ namespace SCCC
 
             // enemy has reached endPosition and waiting for new direction selection
             animator.SetBool("isWalking", false);
+        }
+
+        public void ReverseDirection()
+        {
+            // Reverse the movement direction by flipping the angle
+            currentAngle = Mathf.Repeat(currentAngle + 180f, 360f);
+
+            // Calculate the new endpoint in the opposite direction
+            endPosition = transform.position + Vector3FromAngle(currentAngle) * moveDistance;
+
+            // Restart movement with the new direction
+            if (moveCoroutine != null)
+            {
+                StopCoroutine(moveCoroutine);
+            }
+            moveCoroutine = StartCoroutine(Move(rb2d, currentSpeed));
         }
 
         void OnTriggerEnter2D(Collider2D collision)
