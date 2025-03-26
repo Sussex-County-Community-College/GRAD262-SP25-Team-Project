@@ -12,6 +12,17 @@ namespace SCCC
 
         float hitPoints;
 
+        private void Awake()
+        {
+            DontDestroyOnLoad(gameObject);
+            GameManager.Instance.AddEnemy(gameObject.GetComponent<Enemy>());
+        }
+
+        private void OnDestroy()
+        {
+            GameManager.Instance.RemoveEnemy(gameObject.GetComponent<Enemy>());
+        }
+
         private void OnEnable()
         {
             ResetCharacter();
@@ -50,6 +61,9 @@ namespace SCCC
 
         void OnCollisionEnter2D(Collision2D collision)
         {
+            Debug.Log("enemy collided with wall");
+            gameObject.GetComponent<Wander>().ReverseDirection();
+
             // Because only enemies can only hurt the player
             if (collision.gameObject.CompareTag("Player"))
             {
