@@ -121,6 +121,11 @@ namespace SCCC
             moveCoroutine = StartCoroutine(Move(rb2d, currentSpeed));
         }
 
+        void OnEnable()
+        {
+            StartCoroutine(WanderRoutine());
+        }
+
         void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.gameObject.CompareTag("Player") && followPlayer)

@@ -14,7 +14,7 @@ namespace SCCC
             {
                 InvokeRepeating("SpawnObject", 0.0f, repeatInterval);
             }
-            else if(!GameManager.Instance.EnemiesSpawned())
+            else
                 SpawnObject();
         }
 
@@ -23,7 +23,9 @@ namespace SCCC
 
             if (prefabToSpawn != null)
             {
-                return Instantiate(prefabToSpawn, transform.position, Quaternion.identity);
+                GameObject go = Instantiate(prefabToSpawn, transform.position, Quaternion.identity);
+                if (go.GetComponent<Enemy>())
+                    GameManager.Instance.AddEnemy(go.GetComponent<Enemy>());
             }
             return null;
         }

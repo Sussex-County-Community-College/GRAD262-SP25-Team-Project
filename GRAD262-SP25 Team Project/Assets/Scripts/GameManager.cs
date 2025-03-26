@@ -6,42 +6,65 @@ using UnityEngine.SceneManagement;
 using System;
 using System.Text.RegularExpressions;
 
-public class GameManager : Singleton<GameManager>
+namespace SCCC
 {
-    public bool enemiesSpawned = false;
 
-    private void Start()
+    public class GameManager : Singleton<GameManager>
     {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-        ToggleEnemies(isDungeonScene());
-    }
+        public bool enemiesSpawned = false;
+        public List<Enemy> enemies = new List<Enemy>();
+        public Transform[] enemySpawnPoints;
+        public GameObject enemyPrefab;
+        public Vector3 playerPosition;
 
-    private void ToggleEnemies(bool active)
-    {
-        Enemy[] enemies = Resources.FindObjectsOfTypeAll<Enemy>();
-        foreach (Enemy enemy in enemies)
+        private void Start()
         {
-            enemy.gameObject.SetActive(active);
-        }
-    }
+            SceneManager.sceneLoaded += OnSceneLoaded;
 
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        ToggleEnemies(isDungeonScene());
-    }
-
-    private bool isDungeonScene()
-    {
-        return Regex.IsMatch(SceneManager.GetActiveScene().name, "dungeon", RegexOptions.IgnoreCase);
-    }
-
-    public bool EnemiesSpawned()
-    {
-        if (!enemiesSpawned)
-        {
-            enemiesSpawned = GameObject.FindObjectsByType<Enemy>(FindObjectsSortMode.None).Length > 0;
+            if (isDungeonScene() && !enemiesSpawned)
+                SpawnEnemies();
+            else
+                ToggleEnemies(isDungeonScene());
         }
 
-        return enemiesSpawned;
+        private void ToggleEnemies(bool active)
+        {
+            foreach (Enemy enemy in enemies)
+            {
+                enemy.gameObject.SetActive(active);
+            }
+        }
+
+        private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+        {
+            if (isDungeonScene() && !enemiesSpawned) 
+                SpawnEnemies();
+            else
+                ToggleEnemies(isDungeonScene());
+        }
+
+        void SpawnEnemies()
+        {
+            for(int i = 0; i < enemySpawnPoints.Length; i++)
+            {
+                AddEnemy(Instantiate(enemyPrefab, enemySpawnPoints[i].position, Quaternion.identity).GetComponent<Enemy>());
+            }
+            enemiesSpawned = true;
+        }
+
+        private bool isDungeonScene()
+        {
+            return Regex.IsMatch(SceneManager.GetActiveScene().name, "dungeon", RegexOptions.IgnoreCase);
+        }
+
+        public void AddEnemy(Enemy enemy)
+        {
+            enemies.Add(enemy);
+        }
+
+        public void RemoveEnemy(Enemy enemy) 
+        { 
+            enemies.Remove(enemy);
+        }
     }
 }

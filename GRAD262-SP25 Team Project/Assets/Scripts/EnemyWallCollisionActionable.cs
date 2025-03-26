@@ -11,12 +11,18 @@ namespace SCCC
         private void Awake()
         {
             DontDestroyOnLoad(gameObject);
+            GameManager.Instance.AddEnemy(gameObject.GetComponent<Enemy>());
         }
 
         public override void DoAction()
         {
             Debug.Log("enemy collided with wall");
             gameObject.GetComponent<Wander>().ReverseDirection();
+        }
+
+        private void OnDestroy()
+        {
+            GameManager.Instance.RemoveEnemy(gameObject.GetComponent<Enemy>());
         }
     }
 }
