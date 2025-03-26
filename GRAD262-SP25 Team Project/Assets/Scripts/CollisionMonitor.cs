@@ -7,8 +7,8 @@ public class CollisionMonitor : MonoBehaviour
 {
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Actionable actionable = collision.gameObject.GetComponent<Actionable>();
-        if (actionable)
+        Actionable[] actionables = collision.gameObject.GetComponents<Actionable>();
+        foreach (Actionable actionable in actionables)
             actionable.DoAction();
     }
 }

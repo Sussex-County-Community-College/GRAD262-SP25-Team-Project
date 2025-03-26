@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProximityActionable : MonoBehaviour
+public class ProximityActionable : Actionable
 {
     public bool triggered = false;
 
@@ -18,7 +18,7 @@ public class ProximityActionable : MonoBehaviour
         
     }
 
-    public virtual void DoAction()
+    public override void DoAction()
     {
         Debug.Log("Entered DoAction");
     }
