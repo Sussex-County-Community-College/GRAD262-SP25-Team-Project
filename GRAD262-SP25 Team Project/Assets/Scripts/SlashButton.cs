@@ -7,7 +7,6 @@ public class SlashButton : MonoBehaviour
     public int maxSlash = 4;
 
     public Sprite[] SlashLevels;
-    public Button button; // Reference to the UI Button
     public Image SlashLevel; // Reference to the UI Image whose sprite will change
 
     // once the button is pressed, the sprite will change to the next slash level
@@ -32,26 +31,6 @@ public class SlashButton : MonoBehaviour
           }
           UpdateSprite();
       }
-    }
-
-    private void Start()
-    {
-        if (SlashLevel == null)
-        {
-            Debug.LogError("SlashLevel Image component is missing.");
-        }
-
-        if (button != null)
-        {
-            button.onClick.AddListener(OnButtonPress);
-        }
-        else
-        {
-            Debug.LogError("Button component is missing.");
-        }
-
-        // Update the sprite at the start
-        UpdateSprite();
     }
 
     private void UpdateSprite()
