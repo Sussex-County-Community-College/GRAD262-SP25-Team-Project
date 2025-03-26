@@ -4,34 +4,44 @@ using UnityEngine;
 using DracarysInteractive.AIStudio;
 using UnityEngine.SceneManagement;
 using System;
+using System.Text.RegularExpressions;
 
 public class GameManager : Singleton<GameManager>
 {
-    HashSet<int> scenesLoaded = new HashSet<int>();
+    public bool enemiesSpawned = false;
 
     private void Start()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
+        ToggleEnemies(isDungeonScene());
     }
 
-    private void ToggleEnemies()
+    private void ToggleEnemies(bool active)
     {
-        Enemy[] enemies = GameObject.FindObjectsByType<Enemy>(FindObjectsSortMode.None);
-        foreach(Enemy enemy in enemies)
+        Enemy[] enemies = Resources.FindObjectsOfTypeAll<Enemy>();
+        foreach (Enemy enemy in enemies)
         {
-            enemy.gameObject.SetActive(!enemy.gameObject.activeInHierarchy);
+            enemy.gameObject.SetActive(active);
         }
     }
 
-    private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (HasSceneBeenLoadedBefore())
-            ToggleEnemies();
-        scenesLoaded.Add(arg0.buildIndex);
+        ToggleEnemies(isDungeonScene());
     }
 
-    public bool HasSceneBeenLoadedBefore()
+    private bool isDungeonScene()
     {
-        return scenesLoaded.Contains(SceneManager.GetActiveScene().buildIndex);
+        return Regex.IsMatch(SceneManager.GetActiveScene().name, "dungeon", RegexOptions.IgnoreCase);
+    }
+
+    public bool EnemiesSpawned()
+    {
+        if (!enemiesSpawned)
+        {
+            enemiesSpawned = GameObject.FindObjectsByType<Enemy>(FindObjectsSortMode.None).Length > 0;
+        }
+
+        return enemiesSpawned;
     }
 }

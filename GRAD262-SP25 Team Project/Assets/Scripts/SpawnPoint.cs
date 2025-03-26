@@ -14,7 +14,7 @@ namespace SCCC
             {
                 InvokeRepeating("SpawnObject", 0.0f, repeatInterval);
             }
-            else if(!GameManager.Instance.HasSceneBeenLoadedBefore())
+            else if(!GameManager.Instance.EnemiesSpawned())
                 SpawnObject();
         }
 
