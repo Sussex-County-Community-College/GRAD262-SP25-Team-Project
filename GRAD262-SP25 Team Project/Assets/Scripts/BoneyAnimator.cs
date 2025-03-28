@@ -1,3 +1,4 @@
+#if NPC_AI
 using DracarysInteractive.AIStudio;
 using System;
 using UnityEngine;
@@ -27,3 +28,11 @@ public class BoneyAnimator : MonoBehaviour, IDialogueCharacterAnimator
     {
     }
 }
+#else
+using UnityEngine;
+
+public class BoneyAnimator : MonoBehaviour
+{
+
+}
+#endif

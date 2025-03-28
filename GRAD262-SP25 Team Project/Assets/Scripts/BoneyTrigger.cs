@@ -1,3 +1,4 @@
+#if NPC_AI
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,3 +23,11 @@ public class BoneyTrigger : DialogueTrigger
         }
     }
 }
+#else
+using UnityEngine;
+
+public class BoneyTrigger: MonoBehaviour
+{
+
+}
+#endif
