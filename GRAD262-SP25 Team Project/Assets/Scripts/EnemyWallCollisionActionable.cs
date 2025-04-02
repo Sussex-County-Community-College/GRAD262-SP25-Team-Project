@@ -11,7 +11,7 @@ namespace SCCC
         private void Awake()
         {
             DontDestroyOnLoad(gameObject);
-            GameManager.Instance.AddEnemy(gameObject.GetComponent<Enemy>());
+            EnemyManager.Instance.AddEnemy(gameObject.GetComponent<Enemy>());
         }
 
         public override void DoAction()
@@ -22,7 +22,7 @@ namespace SCCC
 
         private void OnDestroy()
         {
-            GameManager.Instance.RemoveEnemy(gameObject.GetComponent<Enemy>());
+            EnemyManager.Instance.RemoveEnemy(gameObject.GetComponent<Enemy>());
         }
     }
 }

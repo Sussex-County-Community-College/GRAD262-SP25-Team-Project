@@ -25,7 +25,7 @@ namespace SCCC
             {
                 GameObject go = Instantiate(prefabToSpawn, transform.position, Quaternion.identity);
                 if (go.GetComponent<Enemy>())
-                    GameManager.Instance.AddEnemy(go.GetComponent<Enemy>());
+                    EnemyManager.Instance.AddEnemy(go.GetComponent<Enemy>());
             }
             return null;
         }

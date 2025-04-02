@@ -8,9 +8,9 @@ using System.Text.RegularExpressions;
 namespace SCCC
 {
 
-    public class GameManager : MonoBehaviour
+    public class EnemyManager : MonoBehaviour
     {
-        static public GameManager Instance;
+        static public EnemyManager Instance;
         public bool enemiesSpawned = false;
         public List<Enemy> enemies = new List<Enemy>();
         public Transform[] enemySpawnPoints;
@@ -38,6 +38,8 @@ namespace SCCC
                 SpawnEnemies();
             else
                 ToggleEnemies(isDungeonScene());
+
+            StatManager.Instance.SetStat("MyStat", 0);
         }
 
         private void ToggleEnemies(bool active)
