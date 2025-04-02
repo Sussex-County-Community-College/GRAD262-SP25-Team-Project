@@ -43,28 +43,20 @@ public class MinMax : MonoBehaviour
                      (spinButton != null ? spinButton.currentSpin : 0);
 
 
-        // If any of the buttons are not interactable, then subtract 3 from maxEquip for each uninteractable button
-        int nonInteractableCount = 0;
-        if (slashButton != null && !slashButton.GetComponent<Button>().interactable)
+        if (totalEquip == maxEquip + 1 && (slashButton.currentSlash <= slashButton.maxSlash || freezeButton.currentFreeze <= freezeButton.maxFreeze || burnButton.currentBurn <= burnButton.maxBurn || spinButton.currentSpin <= spinButton.maxSpin))
         {
-            nonInteractableCount++;
+            totalEquip = 0; // Reset to 0 if it exceeds maxEquip
+            slashButton.currentSlash = 0;
+            freezeButton.currentFreeze = 0;
+            burnButton.currentBurn = 0;
+            spinButton.currentSpin = 0;
+            slashButton.ResetSprite();
+            freezeButton.ResetSprite();
+            burnButton.ResetSprite();
+            spinButton.ResetSprite();
         }
-        if (freezeButton != null && !freezeButton.GetComponent<Button>().interactable)
-        {
-            nonInteractableCount++;
-        }
-        if (burnButton != null && !burnButton.GetComponent<Button>().interactable)
-        {
-            nonInteractableCount++;
-        }
-        if (spinButton != null && !spinButton.GetComponent<Button>().interactable)
-        {
-            nonInteractableCount++;
-        }
-        int effectiveMaxEquip = maxEquip - 3 * nonInteractableCount;
-
         // Update the UI text elements
         equipTotal.text = totalEquip.ToString();
-        equipMax.text = effectiveMaxEquip.ToString();
+        equipMax.text = maxEquip.ToString();
     }
 }

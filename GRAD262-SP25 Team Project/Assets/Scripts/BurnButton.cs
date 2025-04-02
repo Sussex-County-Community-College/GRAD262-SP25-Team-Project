@@ -20,17 +20,14 @@ public class BurnButton : MonoBehaviour
         UpdateSprite();
     }
 
-    public void OnButtonRightClick()
+    public void OnButtonPressDown()
     {
-      if (Input.GetKeyDown(KeyCode.Mouse1))
-      {
-          currentBurn--;
+         currentBurn--;
           if (currentBurn < 0)
           {
               currentBurn = maxBurn - 1;
           }
           UpdateSprite();
-      }
     }
 
     private void UpdateSprite()
@@ -44,6 +41,11 @@ public class BurnButton : MonoBehaviour
         {
             Debug.LogError("Image component is missing.");
         }
+    }
+
+    public void ResetSprite()
+    {
+        BurnLevel.sprite = BurnLevels[0];
     }
 
 }

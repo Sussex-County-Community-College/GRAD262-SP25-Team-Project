@@ -46,4 +46,9 @@ public class SpinButton : MonoBehaviour
         }
     }
 
+    public void ResetSprite()
+    {
+        SpinLevel.sprite = SpinLevels[0];
+    }
+
 }

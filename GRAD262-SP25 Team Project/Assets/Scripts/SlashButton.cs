@@ -8,6 +8,7 @@ public class SlashButton : MonoBehaviour
 
     public Sprite[] SlashLevels;
     public Image SlashLevel; // Reference to the UI Image whose sprite will change
+    public Class classManager;
 
     // once the button is pressed, the sprite will change to the next slash level
     public void OnButtonPress()
@@ -18,6 +19,8 @@ public class SlashButton : MonoBehaviour
             currentSlash = 0;
         }
         UpdateSprite();
+        Class classManager = FindObjectOfType<Class>();
+        classManager.UpdateClass();
     }
 
     public void OnButtonRightClick()
@@ -43,6 +46,11 @@ public class SlashButton : MonoBehaviour
         {
             Debug.LogError("Image component is missing.");
         }
+    }
+
+    public void ResetSprite()
+    {
+        SlashLevel.sprite = SlashLevels[0];
     }
 
 }

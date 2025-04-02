@@ -45,5 +45,9 @@ public class FreezeButton : MonoBehaviour
             Debug.LogError("Image component is missing.");
         }
     }
+    public void ResetSprite()
+    {
+        FreezeLevel.sprite = FreezeLevels[0];
+    }
 
 }
