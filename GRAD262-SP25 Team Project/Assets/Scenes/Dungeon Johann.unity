@@ -1704,6 +1704,10 @@ GameObject:
   m_Component:
   - component: {fileID: 783057238}
   - component: {fileID: 783057239}
+  - component: {fileID: 783057243}
+  - component: {fileID: 783057242}
+  - component: {fileID: 783057241}
+  - component: {fileID: 783057240}
   m_Layer: 0
   m_Name: barrel_1
   m_TagString: Untagged
@@ -1778,6 +1782,94 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &783057240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783057237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23f685a34ec8a7a4f9aed1844e208594, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggered: 0
+  clip: {fileID: 8300000, guid: 013ea58cd0dd4a943a933a4af454a0f7, type: 3}
+--- !u!114 &783057241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783057237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54645160741dfdb429db62506a4bf168, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!70 &783057242
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783057237}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.004514694, y: -0.1792355}
+  m_Size: {x: 1.275414, y: 1.502548}
+  m_Direction: 0
+--- !u!50 &783057243
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783057237}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &865494643
 GameObject:
   m_ObjectHideFlags: 0
@@ -2197,7 +2289,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggered: 0
-  clip: {fileID: 8300000, guid: 7190fe0dbd9d4ae4bb946eabb8f61946, type: 3}
+  clip: {fileID: 8300000, guid: 6e24cb05c74b7784e8ad5b8247e934a5, type: 3}
 --- !u!114 &1214359538
 MonoBehaviour:
   m_ObjectHideFlags: 0
