@@ -228,13 +228,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 8636391211554642985}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19ee349cddfae44409acdfedbcf233fe, type: 3}
+  m_Script: {fileID: 11500000, guid: 4886ffc211ba9ca4493129ebea13e7e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHitPoints: 2
-  maxHitPoints: 2
-  characterCategory: 1
-  damageStrength: 1
+  startingHitPoints: 0
+  maxHitPoints: 0
+  characterCategory: 0
+  damageStrength: 0
 --- !u!114 &3012099773688944866
 MonoBehaviour:
   m_ObjectHideFlags: 0
