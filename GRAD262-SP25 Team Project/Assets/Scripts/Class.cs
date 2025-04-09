@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using SCCC;
 
 /// <summary>
 /// This is a script that assigns a class to the player based on the number of slash, burn, freeze and spin equips they have.
@@ -22,6 +23,8 @@ public class Class : MonoBehaviour
     public BurnButton burn;
     public SpinButton spin;
     public TextMeshProUGUI classText;
+    private StatManager statManager;
+    private Player player;
 
 
     public void Awake()
@@ -30,36 +33,50 @@ public class Class : MonoBehaviour
         freeze = GetComponent<FreezeButton>();
         burn = GetComponent<BurnButton>();
         spin = GetComponent<SpinButton>();
+        statManager = GetComponent<StatManager>();
+        player = GetComponent<Player>();
+   
     }
 
 
     public void UpdateClass()
 {
-    ClassType selectedClass = ClassType.Knight; // Default class
+    statManager.GetStat("CurrentClass"); // Default class
 
     // Determine the class based on the highest current value
     if (slash.currentSlash >= 0)
     {
-        selectedClass = ClassType.Knight;
+        statManager.SetStat("CurrentClass", (int)ClassType.Knight, true);
+        statManager.SetStat("CurrentHealth" , 20, true);
+
         Debug.Log("Knight");
     }
-    if (freeze.currentFreeze >= 1)
+}
+    
+    public void UpdateFreeze()
+{
+    // Logic for updating freeze
+    StatManager statManager = FindObjectOfType<StatManager>();
+    if (statManager != null)
+    if (statManager.GetStat("currentFreeze") >= 1)
     {
-        selectedClass = ClassType.FrostMage;
-        Debug.Log("Frost Mage");
+        // Example: Increase attack and decrease defense when freeze is active
+        int currentAttack = statManager.GetStat("Attack");
+        int currentDefense = statManager.GetStat("Defense");
+        statManager.SetStat("Attack", currentAttack + 2, true);
+        statManager.SetStat("Defense", currentDefense - 2, true);
     }
-    if (burn.currentBurn >= 1)
+    else if (statManager.GetStat("currentFreeze") == 0)
     {
-        selectedClass = ClassType.FireMage;
-        Debug.Log("Fire Mage");
+        // Example: Decrease attack and increase defense when freeze is active
+        int currentAttack = statManager.GetStat("Attack");
+        int currentDefense = statManager.GetStat("Defense");
+        statManager.SetStat("Attack", currentAttack - 2, true);
+        statManager.SetStat("Defense", currentDefense + 2, true);
     }
-    if (spin.currentSpin >= 1)
+    else
     {
-        selectedClass = ClassType.Jester;
-        Debug.Log("Jester");
+        Debug.LogError("StatManager not found in the scene.");
     }
-
-    // Update the class text in the UI
-    classText.text = selectedClass.ToString();
 }
 }
