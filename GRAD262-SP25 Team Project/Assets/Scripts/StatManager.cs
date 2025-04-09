@@ -11,6 +11,8 @@ namespace SCCC
     {
         static public StatManager Instance;
 
+        public bool resetPlayerPrefs = false;
+
         private string sidList = "";
         private Dictionary<string, int> stats = new Dictionary<string, int>();
 
@@ -30,7 +32,12 @@ namespace SCCC
 
         private void Start()
         {
-            if (PlayerPrefs.HasKey("sidList"))
+            if (resetPlayerPrefs)
+            {
+                Debug.LogWarning("deleting all PlayPrefs");
+                PlayerPrefs.DeleteAll();
+            }
+            else if (PlayerPrefs.HasKey("sidList"))
             {
                 sidList = PlayerPrefs.GetString("sidList");
                 string[] sidListTokens = sidList.Split(' ');
