@@ -18,11 +18,11 @@ public enum ClassType
 }
 public class Class : MonoBehaviour
 {
-    public SlashButton slash;
-    public FreezeButton freeze;
-    public BurnButton burn;
-    public SpinButton spin;
-    public TextMeshProUGUI classText;
+    private SlashButton slash;
+    private FreezeButton freeze;
+    private BurnButton burn;
+    private SpinButton spin;
+    private TextMeshProUGUI classText;
     private StatManager statManager;
     private Player player;
 

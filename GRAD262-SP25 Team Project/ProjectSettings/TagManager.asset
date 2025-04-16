@@ -10,6 +10,7 @@ TagManager:
   - StatsUI
   - EquipUI
   - OptionUI
+  - Equipable
   layers:
   - Default
   - TransparentFX
