@@ -11,7 +11,18 @@ public class MinMax : MonoBehaviour
     public TextMeshProUGUI equipTotal;
     public TextMeshProUGUI equipMax;
 
- // Call this method whenever the SlashLV image array changes
+    private bool initialized = false;
+
+    private void LateUpdate()
+    {
+        if (!initialized)
+        {
+            UpdateEquip();
+            initialized = true;
+        }
+    }
+
+    // Call this method whenever the SlashLV image array changes
     public void UpdateEquip()
     {
         totalEquip++;

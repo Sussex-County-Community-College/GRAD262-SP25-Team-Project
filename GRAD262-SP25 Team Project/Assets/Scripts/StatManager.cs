@@ -58,7 +58,8 @@ namespace SCCC
         {
             if (!stats.ContainsKey(sid))
             {
-                throw new Exception($"{sid}: no such stat");
+                Debug.LogWarning($"{sid}: no such stat, setting to 0");
+                SetStat(sid, 0);
             }
 
             return stats[sid];
