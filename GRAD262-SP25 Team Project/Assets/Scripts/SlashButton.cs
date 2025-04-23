@@ -9,32 +9,24 @@ public class SlashButton : MonoBehaviour
 
     public Sprite[] SlashLevels;
     public Image SlashLevel; // Reference to the UI Image whose sprite will change
-    private StatManager statManager;
 
     private void Start()
     {
-        // Find the StatManager in the scene
-        statManager = FindObjectOfType<StatManager>();
 
-        if (statManager == null)
-        {
-            Debug.LogError("StatManager not found in the scene.");
-            return;
-        }
 
         // Check if "currentSlash" exists in StatManager
-        if (statManager.GetStat("currentSlash") >= 0)
+        if (StatManager.Instance.GetStat("currentSlash") >= 0)
         {
-            currentSlash = statManager.GetStat("currentSlash");
+            currentSlash = StatManager.Instance.GetStat("currentSlash");
         }
         else
         {
             // If no value exists, initialize it in StatManager
-            statManager.SetStat("currentSlash", currentSlash, true);
+            StatManager.Instance.SetStat("currentSlash", currentSlash, true);
         }
 
         // Initialize the maxSlash stat in StatManager
-        statManager.SetStat("maxSlash", maxSlash, true);
+        StatManager.Instance.SetStat("maxSlash", maxSlash, true);
 
         // Update the sprite to reflect the loaded value
         UpdateSprite();
@@ -49,7 +41,7 @@ public class SlashButton : MonoBehaviour
         }
 
         // Save the updated value to StatManager
-        statManager.SetStat("currentSlash", currentSlash, true);
+        StatManager.Instance.SetStat("currentSlash", currentSlash, true);
 
         UpdateSprite();
     }
@@ -65,7 +57,7 @@ public class SlashButton : MonoBehaviour
             }
 
             // Save the updated value to StatManager
-            statManager.SetStat("currentSlash", currentSlash, true);
+            StatManager.Instance.SetStat("currentSlash", currentSlash, true);
 
             UpdateSprite();
         }
@@ -88,7 +80,7 @@ public class SlashButton : MonoBehaviour
         currentSlash = 0;
 
         // Save the reset value to StatManager
-        statManager.SetStat("currentSlash", currentSlash, true);
+        StatManager.Instance.SetStat("currentSlash", currentSlash, true);
 
         SlashLevel.sprite = SlashLevels[0];
     }

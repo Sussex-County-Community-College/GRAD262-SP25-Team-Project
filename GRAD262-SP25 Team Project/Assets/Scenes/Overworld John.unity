@@ -158,6 +158,8 @@ MonoBehaviour:
   PlayerUIPrefab: {fileID: 505568094}
   statScreen: {fileID: 1551047712}
   equipScreen: {fileID: 704283207}
+  Player: {fileID: 372452519}
+  statManager: {fileID: 1008658235}
 --- !u!114 &9321387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31565,6 +31567,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40d7f813312b6cc41ae2159736c58384, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  statManager: {fileID: 1008658235}
+  classManager: {fileID: 1544222025}
 --- !u!1 &1622312049
 GameObject:
   m_ObjectHideFlags: 0
