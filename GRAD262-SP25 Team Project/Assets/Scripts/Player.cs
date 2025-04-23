@@ -8,8 +8,8 @@ namespace SCCC
 {
     public class Player : MonoBehaviour
     {
-        private StatManager statManager;
-        private Class classManager;
+        public StatManager statManager;
+        public Class classManager;
 
         // Start is called before the first frame update
         void Start()
