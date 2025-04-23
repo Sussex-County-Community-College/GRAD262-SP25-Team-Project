@@ -8,35 +8,17 @@ namespace SCCC
 {
     public class Player : MonoBehaviour
     {
-        public StatManager statManager;
-        public Class classManager;
-
         // Start is called before the first frame update
         void Start()
         {
-            statManager = FindObjectOfType<StatManager>();
-            classManager = FindObjectOfType<Class>();
-
-            if (statManager == null)
-            {
-                Debug.LogError("StatManager not found in the scene.");
-                return;
-            }
-
-            if (classManager == null)
-            {
-                Debug.LogError("ClassManager not found in the scene.");
-                return;
-            }
-
             // Initialize player stats
-            statManager.SetStat("CurrentHealth", 20, true);
-            statManager.SetStat("MaxHealth", 20, true);
-            statManager.SetStat("CurrentClass", (int)ClassType.Knight, true); // Default class
-            statManager.SetStat("AttackStat", 10, true);
-            statManager.SetStat("DefenseStat", 10, true);
-            statManager.SetStat("CurrentMana", 10, true);
-            statManager.SetStat("MaxMana", 10, true);
+            StatManager.Instance.SetStat("CurrentHealth", 20, true);
+            StatManager.Instance.SetStat("MaxHealth", 20, true);
+            StatManager.Instance.SetStat("CurrentClass", (int)ClassType.Knight, true); // Default class
+            StatManager.Instance.SetStat("AttackStat", 10, true);
+            StatManager.Instance.SetStat("DefenseStat", 10, true);
+            StatManager.Instance.SetStat("CurrentMana", 10, true);
+            StatManager.Instance.SetStat("MaxMana", 10, true);
         }
 
         // Update is called once per frame

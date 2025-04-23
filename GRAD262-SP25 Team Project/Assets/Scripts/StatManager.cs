@@ -13,8 +13,8 @@ namespace SCCC
 
         public bool resetPlayerPrefs = false;
 
-        private string sidList = "";
-        private Dictionary<string, int> stats = new Dictionary<string, int>();
+        private string _sidList;
+        private Dictionary<string, int> _stats = new Dictionary<string, int>();
 
         private void Awake()
         {
@@ -26,58 +26,54 @@ namespace SCCC
             else
             {
                 Instance = this;
-                DontDestroyOnLoad(gameObject);
-            }
-        }
 
-        private void Start()
-        {
-            if (resetPlayerPrefs)
-            {
-                Debug.LogWarning("deleting all PlayPrefs");
-                PlayerPrefs.DeleteAll();
-            }
-            else if (PlayerPrefs.HasKey("sidList"))
-            {
-                sidList = PlayerPrefs.GetString("sidList");
-                string[] sidListTokens = sidList.Split(' ');
-
-                foreach (var sid in sidListTokens)
+                if (resetPlayerPrefs)
                 {
-                    stats[sid] = PlayerPrefs.GetInt(sid);
-                    Debug.Log($"loaded persistent stat {sid} value {stats[sid]}");
+                    Debug.LogWarning("deleting all PlayPrefs");
+                    PlayerPrefs.DeleteAll();
                 }
-            }
-            else
-            {
-                Debug.LogWarning("no sidList in PlayerPrefs");
+                else if (PlayerPrefs.HasKey("sidList"))
+                {
+                    _sidList = PlayerPrefs.GetString("sidList");
+                    string[] sidListTokens = _sidList.Split(' ');
+
+                    foreach (var sid in sidListTokens)
+                    {
+                        _stats[sid] = PlayerPrefs.GetInt(sid);
+                        Debug.Log($"loaded persistent stat {sid} value {_stats[sid]}");
+                    }
+                }
+                else
+                {
+                    Debug.LogWarning("no sidList in PlayerPrefs");
+                }
             }
         }
 
         public int GetStat(string sid)
         {
-            if (!stats.ContainsKey(sid))
+            if (!_stats.ContainsKey(sid))
             {
                 Debug.LogWarning($"{sid}: no such stat, setting to 0");
                 SetStat(sid, 0);
             }
 
-            return stats[sid];
+            return _stats[sid];
         }
 
         public void SetStat(string sid, int value, bool persist = true)
         {
-            stats[sid] = value;
+            _stats[sid] = value;
 
             if (persist)
             {
                 PlayerPrefs.SetInt(sid, value);
 
-                if (!sidList.Contains(sid))
+                if (!_sidList.Contains(sid))
                 {
-                    sidList += $"{sid} ";
-                    PlayerPrefs.SetString("sidList", sidList);
-                    Debug.Log($"saved updated sidList " + sidList);
+                    _sidList += $"{sid} ";
+                    PlayerPrefs.SetString("sidList", _sidList);
+                    Debug.Log($"saved updated sidList " + _sidList);
                 }
             }
         }

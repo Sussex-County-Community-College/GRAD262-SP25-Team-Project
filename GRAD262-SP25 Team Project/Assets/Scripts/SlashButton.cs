@@ -12,21 +12,7 @@ public class SlashButton : MonoBehaviour
 
     private void Start()
     {
-
-
-        // Check if "currentSlash" exists in StatManager
-        if (StatManager.Instance.GetStat("currentSlash") >= 0)
-        {
-            currentSlash = StatManager.Instance.GetStat("currentSlash");
-        }
-        else
-        {
-            // If no value exists, initialize it in StatManager
-            StatManager.Instance.SetStat("currentSlash", currentSlash, true);
-        }
-
-        // Initialize the maxSlash stat in StatManager
-        StatManager.Instance.SetStat("maxSlash", maxSlash, true);
+        currentSlash = StatManager.Instance.GetStat("currentSlash");
 
         // Update the sprite to reflect the loaded value
         UpdateSprite();
