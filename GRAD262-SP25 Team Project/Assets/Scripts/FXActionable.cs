@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SoundEffectActionable : ProximityActionable
+public class FXActionable : ProximityActionable
 {
     public AudioClip clip;
     // public ParticleSystem fx;
