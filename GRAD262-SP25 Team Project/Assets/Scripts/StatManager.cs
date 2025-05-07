@@ -11,7 +11,7 @@ namespace SCCC
     {
         public bool resetPlayerPrefs = false;
 
-        private string _sidList;
+        private string _sidList = "";
         private Dictionary<string, int> _stats = new Dictionary<string, int>();
 
         protected override void Awake()
