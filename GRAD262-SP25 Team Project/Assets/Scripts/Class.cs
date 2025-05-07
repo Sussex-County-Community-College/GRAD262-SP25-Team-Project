@@ -1,82 +1,61 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 using SCCC;
-
+using UnityEngine.UI;
 /// <summary>
-/// This is a script that assigns a class to the player based on the number of slash, burn, freeze and spin equips they have.
+/// Enum representing the player's class types.
 /// </summary>
-public enum ClassType
+public class Class : MonoBehaviour
 {
+    public enum ClassType
+ {
     Knight,
     FrostMage,
     FireMage,
     Jester
-}
-public class Class : MonoBehaviour
-{
+ }
+
+    public ClassType classType; // The player's class type
+
+
     private SlashButton slash;
     private FreezeButton freeze;
     private BurnButton burn;
     private SpinButton spin;
-    private TextMeshProUGUI classText;
-    private StatManager statManager;
+    public TextMeshProUGUI classText;
     private Player player;
-
-
+ 
+ 
     public void Awake()
     {
         slash = GetComponent<SlashButton>();
         freeze = GetComponent<FreezeButton>();
         burn = GetComponent<BurnButton>();
         spin = GetComponent<SpinButton>();
-        statManager = GetComponent<StatManager>();
         player = GetComponent<Player>();
-   
     }
 
+    public void Update()
+    {
+        UpdateClass();
+    }
 
     public void UpdateClass()
-{
-    statManager.GetStat("CurrentClass"); // Default class
+    {
+        if (StatManager.Instance.GetStat("currentFreeze") == 1)
+        {
+            classType = ClassType.FrostMage;
+            StatManager.Instance.SetStat("MaxHealth", 15, true);
+            StatManager.Instance.SetStat("CurrentHealth", 15, true);
+        }
+        else if (StatManager.Instance.GetStat("currentBurn") == 1)
+        {
+            classType = ClassType.FireMage;
+        }
 
-    // Determine the class based on the highest current value
-    if (slash.currentSlash >= 0)
-    {
-        statManager.SetStat("CurrentClass", (int)ClassType.Knight, true);
-        statManager.SetStat("CurrentHealth" , 20, true);
+        if (classText)
+            classText.text = classType.ToString();
+    }
 
-        Debug.Log("Knight");
-    }
-}
-    
-    public void UpdateFreeze()
-{
-    // Logic for updating freeze
-    StatManager statManager = FindObjectOfType<StatManager>();
-    if (statManager != null)
-    if (statManager.GetStat("currentFreeze") >= 1)
-    {
-        // Example: Increase attack and decrease defense when freeze is active
-        int currentAttack = statManager.GetStat("Attack");
-        int currentDefense = statManager.GetStat("Defense");
-        statManager.SetStat("Attack", currentAttack + 2, true);
-        statManager.SetStat("Defense", currentDefense - 2, true);
-    }
-    else if (statManager.GetStat("currentFreeze") == 0)
-    {
-        // Example: Decrease attack and increase defense when freeze is active
-        int currentAttack = statManager.GetStat("Attack");
-        int currentDefense = statManager.GetStat("Defense");
-        statManager.SetStat("Attack", currentAttack - 2, true);
-        statManager.SetStat("Defense", currentDefense + 2, true);
-    }
-    else
-    {
-        Debug.LogError("StatManager not found in the scene.");
-    }
-}
 }
