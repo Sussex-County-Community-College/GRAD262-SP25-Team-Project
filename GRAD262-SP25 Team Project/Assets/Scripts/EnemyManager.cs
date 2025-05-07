@@ -8,27 +8,13 @@ using System.Text.RegularExpressions;
 namespace SCCC
 {
 
-    public class EnemyManager : MonoBehaviour
+    public class EnemyManager : Singleton<EnemyManager>
     {
-        static public EnemyManager Instance;
         public bool enemiesSpawned = false;
         public List<Enemy> enemies = new List<Enemy>();
         public Transform[] enemySpawnPoints;
         public GameObject enemyPrefab;
         public Vector3 playerPosition;
-
-        private void Awake()
-        {
-            if (Instance)
-            {
-                Destroy(gameObject);
-            }
-            else
-            {
-                Instance = this;
-                DontDestroyOnLoad(gameObject);
-            }
-        }
 
         private void Start()
         {

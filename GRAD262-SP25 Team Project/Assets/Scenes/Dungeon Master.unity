@@ -10098,6 +10098,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 127726649}
+  - {fileID: 1963735447}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &908385615
@@ -23913,11 +23914,11 @@ Transform:
   m_GameObject: {fileID: 1963735446}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.534248, y: 9.959335, z: -0.3007886}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 908073830}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1963735448
 MonoBehaviour:
@@ -23928,13 +23929,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1963735446}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9efc2ecdea6b4344bb87d2e716d1e077, type: 3}
+  m_Script: {fileID: 11500000, guid: f08a3daf92cd1ca4e9aaef1a434a6e33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _logLevel: 3
-  _destroyOnLoad: 1
+  _logLevel: 0
+  _destroyOnLoad: 0
   _console: {fileID: 0}
-  _consoleLogLevel: 3
+  _consoleLogLevel: 0
   enemiesSpawned: 0
   enemies: []
   enemySpawnPoints:
@@ -25785,5 +25786,4 @@ SceneRoots:
   - {fileID: 689895103}
   - {fileID: 1037191689}
   - {fileID: 1819735616}
-  - {fileID: 1963735447}
   - {fileID: 1209223597}
