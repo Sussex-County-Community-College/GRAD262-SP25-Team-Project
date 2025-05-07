@@ -67,5 +67,22 @@ namespace SCCC
         { 
             enemies.Remove(enemy);
         }
+
+        public Enemy FindClosestEnemy(Vector3 position)
+        {
+            Enemy closest = null;
+            float minDistance = float.MaxValue;
+
+            foreach(Enemy enemy in enemies)
+            {
+                if (Vector3.Distance(position, enemy.transform.position) < minDistance)
+                {
+                    minDistance = Vector3.Distance(position, enemy.transform.position);
+                    closest = enemy;
+                }
+            }
+
+            return closest;
+        }
     }
 }
