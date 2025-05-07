@@ -61,7 +61,6 @@ namespace SCCC
 
         void OnCollisionEnter2D(Collision2D collision)
         {
-            Debug.Log("enemy collided with wall");
             gameObject.GetComponent<Wander>().ReverseDirection();
 
             // Because only enemies can only hurt the player
