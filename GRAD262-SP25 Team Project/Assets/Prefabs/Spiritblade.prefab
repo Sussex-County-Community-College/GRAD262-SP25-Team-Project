@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2008116502116503210}
   - component: {fileID: 4471629251315141378}
   - component: {fileID: 6410119417567596487}
+  - component: {fileID: 6051224487400254028}
   m_Layer: 20
   m_Name: Spiritblade
   m_TagString: Player
@@ -93,7 +94,7 @@ SpriteRenderer:
   m_SortingLayerID: -1869315837
   m_SortingLayer: 1
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: ec47f75fe8aff1644ac73998f4ad31b5, type: 3}
+  m_Sprite: {fileID: -959090390, guid: c6b5b7acf9370e849bef5654bf4d4aa2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -136,18 +137,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0038104355, y: -0.32899636}
+  m_Offset: {x: 0.007959329, y: -0.2325001}
   m_SpriteTilingProperty:
-    border: {x: 0, y: 0.03125, z: 0, w: 0.9375}
-    pivot: {x: 0.5, y: 0}
-    oldSize: {x: 0.65625, y: 1.5}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 0.65625, y: 1.4}
     adaptiveTilingThreshold: 0.5
     drawMode: 1
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.38386935, y: 0.27935126}
+  m_Size: {x: 0.30309248, y: 0.47234374}
   m_EdgeRadius: 0
 --- !u!50 &3374624959227014841
 Rigidbody2D:
@@ -226,6 +227,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40d7f813312b6cc41ae2159736c58384, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6051224487400254028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1546399886589373754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99a3490dd4aa4724c8173d53b2dd0f39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  classType: 0
+  classText: {fileID: 0}
 --- !u!1 &3048827976269161305
 GameObject:
   m_ObjectHideFlags: 0

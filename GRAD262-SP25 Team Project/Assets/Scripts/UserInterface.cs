@@ -11,22 +11,22 @@ public class UserInterface : MonoBehaviour
     public GameObject statScreen; // Reference to the Stat Screen Game Object
     public GameObject equipScreen; // Reference to the Equip Screen Game Object
     public GameObject Player; // Reference to the Player Game Object
-   public TextMeshProUGUI attackText;
+    public TextMeshProUGUI attackText;
     public TextMeshProUGUI defenseText;
     public TextMeshProUGUI healthText;
     public TextMeshProUGUI manaText;
     public TextMeshProUGUI classText;
 
-     void Start()
-     //get the stats from the Player Script
-     {
-            Player = GameObject.FindGameObjectWithTag("Player");
-            if (PlayerUIPrefab == null)
-            {
-                Debug.LogError("PlayerUIPrefab is not assigned in the inspector.");
-            }     
+    void Start()
+    //get the stats from the Player Script
+    {
+        Player = GameObject.FindGameObjectWithTag("Player");
+        if (PlayerUIPrefab == null)
+        {
+            Debug.LogError("PlayerUIPrefab is not assigned in the inspector.");
+        }
     }
-    
+
 
     // Update is called once per frame
     void Update()
@@ -54,7 +54,7 @@ public class UserInterface : MonoBehaviour
         equipScreen.SetActive(!equipScreen.activeSelf);
     }
 
-// Display the stats on the UI from the StatManager.Instance
+    // Display the stats on the UI from the StatManager.Instance
     public void DisplayStats()
     {
         attackText.text = StatManager.Instance.GetStat("AttackStat").ToString();

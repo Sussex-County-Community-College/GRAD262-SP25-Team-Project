@@ -299,8 +299,8 @@ GameObject:
   - component: {fileID: 7947911505737750450}
   - component: {fileID: 5997224648939805555}
   - component: {fileID: 2440844624711060802}
-  - component: {fileID: 6529488428749889149}
-  - component: {fileID: 6057273421896979363}
+  - component: {fileID: 4313205800654974859}
+  - component: {fileID: 4340858096462903309}
   m_Layer: 21
   m_Name: PF Props Altar
   m_TagString: Untagged
@@ -440,7 +440,7 @@ MonoBehaviour:
   - {fileID: 6868958710751573116}
   - {fileID: 2128395779313173791}
   lerpSpeed: 3
---- !u!114 &6529488428749889149
+--- !u!114 &4313205800654974859
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -454,7 +454,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggered: 0
   clip: {fileID: 8300000, guid: a192671434915bf4daa926453cdebe6c, type: 3}
---- !u!114 &6057273421896979363
+--- !u!114 &4340858096462903309
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
