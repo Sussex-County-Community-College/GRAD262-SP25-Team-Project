@@ -12852,6 +12852,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spiritblade
       objectReference: {fileID: 0}
+    - target: {fileID: 6051224487400254028, guid: 65ebf792ba5266b47a7f30f8b169a6bd,
+        type: 3}
+      propertyPath: classText
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

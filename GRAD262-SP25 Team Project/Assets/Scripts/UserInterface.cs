@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices;
 using SCCC;
 using TMPro;
 using UnityEngine;
@@ -11,6 +12,7 @@ public class UserInterface : MonoBehaviour
     public GameObject statScreen; // Reference to the Stat Screen Game Object
     public GameObject equipScreen; // Reference to the Equip Screen Game Object
     public GameObject Player; // Reference to the Player Game Object
+    public Class classMan;
     public TextMeshProUGUI attackText;
     public TextMeshProUGUI defenseText;
     public TextMeshProUGUI healthText;
@@ -38,14 +40,19 @@ public class UserInterface : MonoBehaviour
             {
                 equipScreen.SetActive(false);
                 statScreen.SetActive(false);
+                Time.timeScale = 1;
+            }
+            else
+            {
+                Time.timeScale = 0;
             }
         }
+        DisplayStats();
     }
 
     public void StatScreenOn()
     {
         statScreen.SetActive(!statScreen.activeSelf);
-        DisplayStats();
     }
 
     public void EquipScreenOn()
@@ -61,7 +68,7 @@ public class UserInterface : MonoBehaviour
         defenseText.text = StatManager.Instance.GetStat("DefenseStat").ToString();
         healthText.text = StatManager.Instance.GetStat("CurrentHealth").ToString() + "/" + StatManager.Instance.GetStat("MaxHealth").ToString();
         manaText.text = StatManager.Instance.GetStat("CurrentMana").ToString() + "/" + StatManager.Instance.GetStat("MaxMana").ToString();
-        classText.text = "Current Class: " + StatManager.Instance.GetStat("CurrentClass").ToString();
+        classText.text = "Class: " + classMan.classType.ToString();
     }
 }
 

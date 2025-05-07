@@ -98,7 +98,8 @@ GameObject:
   - component: {fileID: 5628018141983903116}
   - component: {fileID: 5628018141983903117}
   - component: {fileID: 4616719885696106401}
-  - component: {fileID: 1191469652523081968}
+  - component: {fileID: 1785744896858091385}
+  - component: {fileID: 687268846131741598}
   m_Layer: 20
   m_Name: PF Player
   m_TagString: Player
@@ -280,7 +281,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1191469652523081968
+--- !u!114 &1785744896858091385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5628018141983903104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40d7f813312b6cc41ae2159736c58384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &687268846131741598
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -292,8 +305,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99a3490dd4aa4724c8173d53b2dd0f39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slash: {fileID: 0}
-  freeze: {fileID: 0}
-  burn: {fileID: 0}
-  spin: {fileID: 0}
+  classType: 0
   classText: {fileID: 0}
