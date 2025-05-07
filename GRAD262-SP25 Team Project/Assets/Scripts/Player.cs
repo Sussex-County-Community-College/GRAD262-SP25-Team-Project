@@ -9,15 +9,19 @@ namespace SCCC
 {
     public class Player : MonoBehaviour
     {
-        public int currentHealth = StatManager.Instance.GetStat("CurrentHealth");
-        public int maxHealth = StatManager.Instance.GetStat("MaxHealth");
-        public int attackStat = StatManager.Instance.GetStat("AttackStat");
-        public int defenseStat = StatManager.Instance.GetStat("DefenseStat");
-        public int currentMana = StatManager.Instance.GetStat("CurrentMana");
-        public int maxMana = StatManager.Instance.GetStat("MaxMana");
+#if false
+        public int currentHealth;
+        public int maxHealth;
+        public int attackStat;
+        public int defenseStat;
+        public int currentMana;
+        public int maxMana;
+#endif
+
         // Start is called before the first frame update
         void Start()
         {
+#if false
             // Initialize player stats from the Class Script that has an enum for the classes
             // Set default values for player stats
             StatManager.Instance.SetStat("CurrentHealth", 20, true);
@@ -26,13 +30,15 @@ namespace SCCC
             StatManager.Instance.SetStat("DefenseStat", 10, true);
             StatManager.Instance.SetStat("CurrentMana", 10, true);
             StatManager.Instance.SetStat("MaxMana", 10, true);
-            
-        }
 
-        // Update is called once per frame
-        void Update()
-        {
-
+            // why these fields?
+            currentHealth = StatManager.Instance.GetStat("CurrentHealth");
+            maxHealth = StatManager.Instance.GetStat("MaxHealth");
+            attackStat = StatManager.Instance.GetStat("AttackStat");
+            defenseStat = StatManager.Instance.GetStat("DefenseStat");
+            currentMana = StatManager.Instance.GetStat("CurrentMana");
+            maxMana = StatManager.Instance.GetStat("MaxMana");
+#endif
         }
 
         private void OnCollisionEnter2D(Collision2D collision)

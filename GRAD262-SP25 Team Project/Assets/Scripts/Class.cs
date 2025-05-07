@@ -54,7 +54,8 @@ public class Class : MonoBehaviour
             classType = ClassType.FireMage;
         }
 
-        classText.text = classType.ToString();
+        if (classText)
+            classText.text = classType.ToString();
     }
 
 }

@@ -7,46 +7,36 @@ using System;
 
 namespace SCCC
 {
-    public class StatManager : MonoBehaviour
+    public class StatManager : Singleton<StatManager>
     {
-        static public StatManager Instance;
-
         public bool resetPlayerPrefs = false;
 
         private string _sidList;
         private Dictionary<string, int> _stats = new Dictionary<string, int>();
 
-        private void Awake()
+        protected override void Awake()
         {
-            if (Instance)
+            base.Awake();
+
+            if (resetPlayerPrefs)
             {
-                Debug.LogWarning("StatManager instance already exists");
-                Destroy(gameObject);
+                Debug.LogWarning("deleting all PlayPrefs");
+                PlayerPrefs.DeleteAll();
+            }
+            else if (PlayerPrefs.HasKey("sidList"))
+            {
+                _sidList = PlayerPrefs.GetString("sidList");
+                string[] sidListTokens = _sidList.Split(' ');
+
+                foreach (var sid in sidListTokens)
+                {
+                    _stats[sid] = PlayerPrefs.GetInt(sid);
+                    Debug.Log($"loaded persistent stat {sid} value {_stats[sid]}");
+                }
             }
             else
             {
-                Instance = this;
-
-                if (resetPlayerPrefs)
-                {
-                    Debug.LogWarning("deleting all PlayPrefs");
-                    PlayerPrefs.DeleteAll();
-                }
-                else if (PlayerPrefs.HasKey("sidList"))
-                {
-                    _sidList = PlayerPrefs.GetString("sidList");
-                    string[] sidListTokens = _sidList.Split(' ');
-
-                    foreach (var sid in sidListTokens)
-                    {
-                        _stats[sid] = PlayerPrefs.GetInt(sid);
-                        Debug.Log($"loaded persistent stat {sid} value {_stats[sid]}");
-                    }
-                }
-                else
-                {
-                    Debug.LogWarning("no sidList in PlayerPrefs");
-                }
+                Debug.LogWarning("no sidList in PlayerPrefs");
             }
         }
 
